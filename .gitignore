@@ -1,0 +1,103 @@
+# SECRETS AND ENVIRONMENT
+.env
+.env.*
+!.env.example
+
+# PYTHON
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# VIRTUAL ENVIRONMENT
+.venv/
+venv/
+env/
+
+# PACKAGING AND BUILD
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+
+# TOOLS CACHE
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+
+# COVERAGE AND REPORTS
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+bandit-report.*
+pip-audit-report.*
+
+# DJANGO
+*.log
+logs/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+backend/staticfiles/
+backend/media/
+
+# CELERY
+celerybeat-schedule
+celerybeat-schedule.*
+celerybeat.pid
+ 
+# NODE AND FRONTEND
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/coverage/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# DOCKER
+docker-compose.override.yml
+compose.override.yml
+.docker/
+pgdata/
+postgres-data/
+redis-data/
+
+# LOCAL SERVICES
+.stripe/
+mailpit-data/
+
+# IDE AND EDITORS
+.idea/
+.vscode/*
+!.vscode/settings.json.example
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+ 
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+ 
+# LOAD TESTING AND PROFILING
+k6-results/
+*.prof
+*.pstats
+ 
+# TEMPORARY
+tmp/
+temp/
+*.bak
+*.orig
+*.rej
