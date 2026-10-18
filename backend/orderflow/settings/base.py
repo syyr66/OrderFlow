@@ -2,14 +2,13 @@ import environ
 import os
 from pathlib import Path
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 env = environ.Env(
     SECRET_KEY = (str, "django-insecure-secret-key-123")
 )
 
-environ.Env.read_env(BASE_DIR / ".env")
+environ.Env.read_env(BASE_DIR.parent / ".env")
 
 SECRET_KEY = env("SECRET_KEY")
 
@@ -55,6 +54,18 @@ DATABASES = {
         'PASSWORD': env("POSTGRES_PASSWORD"),
         'HOST': env("POSTGRES_HOST"),
         'PORT': env("POSTGRES_PORT", default="5432"),
+    },
+    "OPTIONS": {
+        "connect_timeout": 2
+    }
+}
+
+REDIS_URL = env("REDIS_URL")
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": REDIS_URL,
     }
 }
 
