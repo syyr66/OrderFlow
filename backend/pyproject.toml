@@ -1,0 +1,25 @@
+[project]
+name = "orderflow"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "django>=6.1.2",
+    "django-environ>=0.14.0",
+    "djangorestframework>=3.18.3",
+    "gunicorn>=26.2.0",
+    "psycopg[binary]>=3.3.6",
+    "pytest>=9.1.1",
+    "pytest-django>=4.14.0",
+    "pytest-mock>=3.17.0",
+    "redis>=8.1.0",
+]
+
+[tool.uv.build-backend]
+module-root = ""
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "orderflow.settings.dev"
+python_files = ["test_*.py"]
+addopts = "-ra --strict-markers --reuse-db"
